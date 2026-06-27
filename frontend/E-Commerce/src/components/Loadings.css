@@ -1,0 +1,138 @@
+/* =========================
+   FULL SCREEN
+========================= */
+
+.loading-screen{
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255,0,0,0.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(255,0,0,0.08),
+            transparent 30%
+        ),
+        #050505;
+
+    overflow: hidden;
+}
+
+/* =========================
+   NOISE EFFECT
+========================= */
+
+.loading-screen::before{
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.04;
+
+    pointer-events: none;
+
+    background-image:
+        repeating-radial-gradient(
+            circle at 0 0,
+            transparent 0,
+            white 1px,
+            transparent 2px
+        );
+
+    background-size: 6px 6px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.loading-container{
+    text-align: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   SPINNER
+========================= */
+
+.spinner{
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    border: 5px solid rgba(255,255,255,0.08);
+
+    border-top: 5px solid #ff2d2d;
+
+    margin: 0 auto 30px;
+
+    animation: spin 1s linear infinite;
+
+    box-shadow:
+        0 0 25px rgba(255,0,0,0.25);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.loading-container h1{
+    color: white;
+
+    font-size: 3rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+
+    text-transform: uppercase;
+}
+
+.loading-container h1::first-letter{
+    color: #ff2d2d;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.loading-container p{
+    color: #bbbbbb;
+
+    font-size: 1rem;
+
+    letter-spacing: 1px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes spin{
+
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}

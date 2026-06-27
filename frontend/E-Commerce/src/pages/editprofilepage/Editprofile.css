@@ -1,0 +1,199 @@
+/* =========================
+   PAGE
+========================= */
+
+.edit-profile-container{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255,0,0,0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(255,0,0,0.08),
+            transparent 30%
+        ),
+        #050505;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.edit-profile-card{
+    width:100%;
+    max-width:700px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgba(18,18,18,0.92);
+
+    border:1px solid rgba(255,45,45,0.20);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.5),
+        0 0 20px rgba(255,0,0,0.10);
+}
+
+.edit-profile-card h1{
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:35px;
+
+    font-size:2.2rem;
+
+    letter-spacing:1px;
+}
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatar{
+    width:120px;
+    height:120px;
+
+    margin:0 auto 30px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:3rem;
+    font-weight:700;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2d2d,
+            #c00000
+        );
+
+    box-shadow:
+        0 0 30px rgba(255,0,0,0.35);
+}
+
+/* =========================
+   FORM
+========================= */
+
+.edit-profile-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.input-group label{
+    color:#d1d1d1;
+
+    font-size:0.95rem;
+
+    font-weight:500;
+}
+
+.input-group input{
+    padding:15px 18px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    background:#111111;
+
+    color:white;
+
+    font-size:1rem;
+
+    outline:none;
+
+    transition:0.3s;
+}
+
+.input-group input:focus{
+    border-color:#ff2d2d;
+
+    box-shadow:
+        0 0 15px rgba(255,0,0,0.20);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.save-btn{
+    margin-top:10px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2d2d,
+            #d60000
+        );
+
+    color:white;
+
+    font-size:1rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.save-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(255,0,0,0.25);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .edit-profile-card{
+        padding:25px;
+    }
+
+    .avatar{
+        width:90px;
+        height:90px;
+
+        font-size:2rem;
+    }
+
+    .edit-profile-card h1{
+        font-size:1.8rem;
+    }
+}

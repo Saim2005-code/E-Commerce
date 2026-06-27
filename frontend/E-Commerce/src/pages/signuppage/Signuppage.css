@@ -1,0 +1,262 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Inter, sans-serif;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.up-container{
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255,0,0,0.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(255,0,0,0.08),
+            transparent 30%
+        ),
+        #050505;
+
+    position: relative;
+}
+
+/* Noise Layer */
+
+.up-container::before{
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    opacity: 0.035;
+
+    pointer-events: none;
+
+    background-image:
+        repeating-radial-gradient(
+            circle at 0 0,
+            transparent 0,
+            #ffffff 1px,
+            transparent 2px
+        );
+
+    background-size: 6px 6px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.up-content{
+    width: 100%;
+    max-width: 460px;
+
+    padding: 40px;
+
+    background:
+        rgba(255,0,0,0.05);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border:
+        1px solid rgba(255,0,0,0.15);
+
+    border-radius: 28px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Red Glow */
+
+.up-content::before{
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    background:
+        radial-gradient(
+            rgba(255,0,0,0.18),
+            transparent
+        );
+
+    top: -120px;
+    right: -120px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.up-content h1{
+    color: white;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.up-content form{
+    display: flex;
+    flex-direction: column;
+}
+
+.up-content label{
+    color: #ffb4b4;
+
+    margin-top: 16px;
+    margin-bottom: 8px;
+
+    font-size: 0.95rem;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.up-content input{
+    width: 100%;
+
+    padding: 14px 16px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 14px;
+
+    color: white;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+}
+
+.up-content input:focus{
+    border-color:
+        rgba(255,0,0,0.4);
+
+    box-shadow:
+        0 0 20px rgba(255,0,0,0.2);
+}
+
+.up-content input::placeholder{
+    color: rgba(255,255,255,0.45);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.up-content button{
+    margin-top: 28px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2d2d,
+            #b30000
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.up-content button:hover{
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(255,0,0,0.4);
+}
+
+.up-content button:active{
+    transform: scale(0.98);
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.up-content p{
+    margin-top: 18px;
+
+    text-align: center;
+
+    color: #ff6b6b;
+
+    font-weight: 600;
+
+    font-size: 0.95rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px){
+
+    .up-content{
+        padding: 28px;
+    }
+
+    .up-content h1{
+        font-size: 1.8rem;
+    }
+}

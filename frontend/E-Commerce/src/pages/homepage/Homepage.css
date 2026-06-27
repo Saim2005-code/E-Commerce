@@ -1,0 +1,125 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+.main-container-homepage {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    inset: 0;
+     min-height: 100vh;
+
+    display: flex;
+    justify-content: center;  /* horizontal center */
+    align-items: center;      /* vertical center */
+    flex-direction: column;    /* stack title + button */
+    text-align: center;
+
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.main-container-homepage::before {
+     content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.6); /* light black overlay */
+    pointer-events: none;
+}
+.page-content{
+    position: relative;
+    z-index: 1;
+}
+#greet-title {
+     font-family: "Great Vibes", cursive;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    animation:titleEnter 2s ease infinite;
+    animation: titleEnter 1.2s ease-out forwards;
+}
+
+.ayat {
+    background: linear-gradient(
+        90deg,
+        #ff6b6b,
+        #ffd93d,
+        #6bcB77,
+        #4d96ff,
+        #b983ff
+    );
+
+    background-size: 300% 300%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientMove 5s ease infinite;
+    
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes titleEnter {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#start-btn {
+    margin-top: 2rem;
+    padding: 14px 36px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #4d96ff,
+        #6bcB77
+    );
+
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease;
+
+    box-shadow: 0 8px 25px rgba(77, 150, 255, 0.35);
+}
+
+#start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(77, 150, 255, 0.5);
+}
+
+#start-btn:active {
+    transform: translateY(0);
+}
+
+#start-btn:focus {
+    outline: none;
+}

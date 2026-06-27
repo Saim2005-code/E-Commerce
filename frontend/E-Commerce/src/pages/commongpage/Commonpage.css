@@ -1,0 +1,277 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Inter, sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   PAGE BACKGROUND
+========================= */
+
+.cp-container{
+    min-height: 100vh;
+    padding: 40px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255,0,0,0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(255,0,0,0.08),
+            transparent 30%
+        ),
+        #050505;
+
+    position: relative;
+}
+
+/* Noise Layer */
+
+.cp-container::before{
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.035;
+
+    pointer-events: none;
+
+    background-image:
+        repeating-radial-gradient(
+            circle at 0 0,
+            transparent 0,
+            #ffffff 1px,
+            transparent 2px
+        );
+
+    background-size: 6px 6px;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.cp-content{
+    max-width: 1500px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(280px,1fr)
+        );
+
+    gap: 30px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.product-card{
+    background:
+        rgba(255, 0, 0, 0.05);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border:
+        1px solid rgba(255,0,0,0.15);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    transition: all 0.35s ease;
+
+    position: relative;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Glow Effect */
+
+.product-card::before{
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    background:
+        radial-gradient(
+            rgba(255,0,0,0.18),
+            transparent
+        );
+
+    top: -100px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.product-card:hover{
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(255,0,0,0.35);
+
+    box-shadow:
+        0 20px 50px rgba(255,0,0,0.15);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.product-card img{
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+
+    transition: transform .5s ease;
+}
+
+.product-card:hover img{
+    transform: scale(1.06);
+}
+
+/* =========================
+   INFO
+========================= */
+
+.product-info{
+    padding: 20px;
+}
+
+.product-info h3{
+    color: white;
+
+    font-size: 1.1rem;
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+}
+
+.brand{
+    color: #ff8c8c;
+
+    font-size: 0.9rem;
+
+    margin-bottom: 12px;
+}
+
+.price{
+    color: white;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.product-info button{
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2d2d,
+            #b30000
+        );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.product-info button:hover{
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(255,0,0,0.4);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #080808;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #7a0000;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #b30000;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .cp-container{
+        padding: 20px;
+    }
+
+    .cp-content{
+        grid-template-columns: 1fr;
+    }
+
+    .product-card img{
+        height: 240px;
+    }
+}
