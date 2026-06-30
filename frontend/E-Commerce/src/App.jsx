@@ -7,6 +7,7 @@ import Profile from "./pages/userprofilepage/Profile.jsx"
 import Editprofile from "./pages/editprofilepage/Editprofile.jsx"
 import Cart from "./pages/cartpage/Cart.jsx"
 import Itempage from "./pages/itemPage/Itempage.jsx"
+import Searchpage from "./pages/searchPage/Searchpage.jsx"
 
 export default function App(){
   return(<>
@@ -20,6 +21,7 @@ export default function App(){
         <Route path="/user/userprofile/editprofile" element={<Editprofile/>} />
         <Route path="/user/userprofile/cart" element={ <Cart/> } />
         <Route path="/home/:id" element={ <Itempage/> }/>
+        <Route path="/home/search" element={ <Searchpage/> }/>
       </Routes>
     </div>
   </>)

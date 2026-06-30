@@ -100,7 +100,6 @@ body{
         1px solid rgba(255,0,0,0.15);
 
     border-radius: 24px;
-
     overflow: hidden;
 
     transition: all 0.35s ease;
@@ -136,6 +135,7 @@ body{
 }
 
 .product-card:hover{
+    cursor: pointer;
     transform:
         translateY(-8px);
 
@@ -168,12 +168,13 @@ body{
 ========================= */
 
 .product-info{
+    display: flex;
+    flex-direction: column;
     padding: 20px;
 }
 
 .product-info h3{
     color: white;
-
     font-size: 1.1rem;
 
     line-height: 1.5;
